@@ -1,0 +1,64 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <input type="number" placeholder="Enter number 1" id="n1" name="num1"/>
+    <br><br>
+    <select name="operator" id="opr">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value=""></option>
+        <option value="/">/</option>
+    </select>
+    <br /><br />
+    <input type="number" placeholder="Enter number 2" id="n2" name="num2"/>
+    <br /><br />
+    <button onclick="calc()">Result</button>
+    <h3 id="res"></h3>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
+
+
+JS
+
+function calc()
+{
+    let number1=document.getElementById('n1').value;
+    let number2=document.getElementById('n2').value;
+    let oper=document.getElementById("opr").value;
+    let result;
+    if(oper=="+")
+    {
+        result=parseFloat(number1) + parseFloat(number2);
+        document.getElementById("res").innerHTML =
+        "Your Answer is" + " "+ result;
+    }
+    if(oper=="-")
+    {
+        result=parseFloat(number1) - parseFloat(number2);
+        document.getElementById("res").innerHTML =
+        "Your Answer is" + " "+ result;
+    }
+    if(oper=="*")
+    {
+        result=parseFloat(number1) * parseFloat(number2);
+        document.getElementById("res").innerHTML =
+        "Your Answer is" + " "+ result;
+    }
+    if(oper=="/")
+    {
+        result=parseFloat(number1) / parseFloat(number2);
+        document.getElementById("res").innerHTML =
+        "Your Answer is" + " "+ result;
+    }
+}
+
+
